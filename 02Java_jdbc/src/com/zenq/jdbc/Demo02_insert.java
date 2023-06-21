@@ -1,12 +1,8 @@
 package com.zenq.jdbc;
 
-
 import java.sql.*;
 
-/*
-
-* */
-public class Demo01 {
+public class Demo02_insert {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/ssm_db?useSSL=false";
         String name = "root";
@@ -24,7 +20,7 @@ public class Demo01 {
         //2. 通过驱动创建链接
         Connection connection = null;
         try {
-             connection = DriverManager.getConnection(
+            connection = DriverManager.getConnection(
                     url,
                     name,
                     password
@@ -40,22 +36,23 @@ public class Demo01 {
             throwables.printStackTrace();
         }
         //4. 编写sql语句，增删改查对象
-        String sql = "select * from tbl_item";
+        String sql = "INSERT INTO `tbl_item`(`itemId`,`itemName`,`itemValue`) VALUES (9,'超级蛋糕',100)";
         //5. 通过代理对象执行sql
-        ResultSet resultSet = null;
+        /*
+        通过代理对象执行sql
+            - executeQuery 查询
+            - executeUpdate 新增 删除 修改
+        * */
+        int res = 0;
         try {
-            resultSet = statement.executeQuery(sql);
+           res = statement.executeUpdate(sql);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         //6. 解析结果查看数据
 
+        System.out.println("影响的数据条数：" + res);
         //7. 关闭所有资源
-        try {
-            resultSet.close();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
         try {
             statement.close();
         } catch (SQLException throwables) {
@@ -66,7 +63,5 @@ public class Demo01 {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-
     }
 }

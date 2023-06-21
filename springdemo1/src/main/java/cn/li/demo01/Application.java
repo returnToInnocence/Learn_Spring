@@ -10,4 +10,4 @@ public class Application {
     }
 }
 
-//学习资料 https://github.com/yudaocode/SpringBoot-Labs
+//参考资料 https://github.com/yudaocode/SpringBoot-Labs
