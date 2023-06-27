@@ -17,8 +17,8 @@
             </dataSource>
         </environment>
     </environments>
-<!--    关联数据库查询操作文件-->
+    <!--    关联数据库查询操作文件-->
     <mappers>
-        <mapper resource="mybatis/mapper/UserMapper.xml" ></mapper>
+        <mapper resource="mybatis2/mapper/UserMapper.xml" ></mapper>
     </mappers>
 </configuration>

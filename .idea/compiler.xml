@@ -12,11 +12,13 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="03Java_Mybatis" target="8" />
+      <module name="Java06_SpringBoot" target="1.8" />
       <module name="springdemo1" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Java06_SpringBoot" options="-parameters" />
       <module name="springdemo1" options="-parameters" />
     </option>
   </component>
